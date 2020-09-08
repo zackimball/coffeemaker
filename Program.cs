@@ -1,5 +1,4 @@
 ﻿using System;
-using CoffeeMaker;
 
 namespace coffeemaker
 {
@@ -7,9 +6,7 @@ namespace coffeemaker
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Making the coffee.");
-            var maker = new CoffeeMake();
-            maker.MakeCoffee(Brew.CoffeeType.Espresso);
+            Console.WriteLine("Hello World!");
         }
     }
 }
