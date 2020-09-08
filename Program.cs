@@ -8,7 +8,7 @@ namespace coffeemaker
     {
         static void Main(string[] args)
         {
-            var rootCommand = new RootCommand() { new Brewer.Brew("brew") };
+            var rootCommand = new RootCommand() { new Brewing,.Brew("brew") };
             rootCommand.InvokeAsync(args).Wait();
         }
     }
