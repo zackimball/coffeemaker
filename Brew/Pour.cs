@@ -2,19 +2,33 @@ using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
 
-namespace Brew
+namespace Brewing
 {
-    public class Pour : Command
+    public abstract class CellPhone
     {
-        public Pour(string name, string description = null) : base(name, description)
+        public virtual void SendMessage()
         {
-            Handler = CommandHandler.Create(PourCoffee);
+            Console.WriteLine("SMS Sent");
         }
+    }
 
-        private void PourCoffee()
+    public class FruitPhone : CellPhone
+    {
+        public override void SendMessage()
         {
-            Console.WriteLine("Pouring coffee");
-            Console.WriteLine("Coffee is ready to drink.");
+            Console.WriteLine("Fancy message sent with a blue bubble, how fancy.");
+            base.SendMessage();
+        }
+    }
+
+    public class RobotPhone : CellPhone
+    {
+        public override void SendMessage()
+        {
+            CellPhone phone = new FruitPhone();
+            phone.SendMessage();
+            Console.WriteLine("Sent RCS Message with awesome features");
+            base.SendMessage();
         }
     }
 }
